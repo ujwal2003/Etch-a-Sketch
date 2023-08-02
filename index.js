@@ -1,24 +1,24 @@
-let grid = document.getElementById("grid-container");
+let grid = document.getElementById("grid");
+let slider = document.getElementById("grid-sizer");
 
-function makeGrid(width, height) {
-    width = (width > 100) ? 100 : width;
-    height = (height > 100) ? 100 : height;
-    
-    for(let x=0; x < width; x++) {
-        let col = document.createElement('div');
-        col.className = 'col';
+let gridSize = 35; //! defined in CSS
 
-        for(let y=0; y < height; y++) {
-            let item = document.createElement('div');
-            item.className = 'grid-box';
-            col.appendChild(item);
-        }
+makeGrid(16);
+slider.oninput = function() {
+    makeGrid(this.value);
+}
 
-        grid.appendChild(col);
+function generateGrid(dim) {
+    for(let i=0; i < dim*dim; i++) {
+        let cell = document.createElement('div');
+        cell.classList.add("grid-item");
+        cell.style.width = `${gridSize / dim}rem`;
+        cell.style.height = `${gridSize / dim}rem`;
+        grid.appendChild(cell);
     }
 }
 
-function editGrid(width, height) {
-    grid.innerHTML = '';
-    makeGrid(width, height);
+function makeGrid(dimensions) {
+    grid.innerHTML = "";
+    generateGrid(dimensions);
 }

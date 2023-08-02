@@ -9,16 +9,19 @@ body {
     align-items: center;
 }
 
-#grid-container {
+#grid {
     display: flex;
+    flex-flow: row wrap;
+    align-self: center;
+    height: 35rem;
+    width: 35rem;
+    padding: 0;
+    outline: black solid 4px;
 }
 
-.col {
-    flex: 1;
-}
-
-.grid-box {
-    height: 20px;
-    width: 20px;
-    border: solid 2px black;
+.grid-item {
+    /* width & height done in js*/
+    box-sizing: border-box;
+    outline: black solid 1px;
+    background-color: white;
 }
