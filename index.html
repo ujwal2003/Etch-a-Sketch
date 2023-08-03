@@ -8,20 +8,31 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-    <p id="label">Size: 16x16</p>
-    <div id="grid"></div>
-
-    <div id="color-input">
-        <p>Color:</p>
-        <input type="color" id="color">
+    <div class="header">
+        <h1>Etch-a-Sketch</h1>
     </div>
 
-    <div class="slidecontainer">
-        <p>0</p>
-        <input type="range" min="1" max="50" value="16" class="slider" id="grid-sizer">
-        <p>50</p>
+    <div class="container">
+        <div class="canvas">
+            <p id="label">Size: 16x16</p>
+            <div id="grid"></div>
+        </div>
+    
+        <div class="control-panel">
+            <div id="color-input">
+                <p>Color:</p>
+                <input type="color" id="color">
+            </div>
+        
+            <div class="slidecontainer">
+                <p>0</p>
+                <input type="range" min="1" max="50" value="16" class="slider" id="grid-sizer">
+                <p>50</p>
+            </div>
+    
+            <button type="button" id="clr-btn">Clear Canvas</button>
+        </div>
     </div>
 
-    <button type="button" id="clr-btn">Clear Canvas</button>
 </body>
 </html>
